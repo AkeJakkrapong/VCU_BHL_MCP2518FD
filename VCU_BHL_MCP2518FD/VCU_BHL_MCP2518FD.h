@@ -64,6 +64,7 @@ uint16_t readVolt(uint8_t analogPin)
 }
 
 
+// ESP32 Board v3.1.3
 //##################       Function PWM       ##################
 void pwm(uint8_t ch, uint16_t freq, uint8_t duty)
 {
@@ -82,6 +83,26 @@ void pwm(uint8_t ch, uint16_t freq, uint8_t duty)
     break;
   } 
 }
+
+//// ESP32 Board v2.0
+////##################       Function PWM       ##################
+//void pwm(uint8_t ch, uint16_t freq, uint8_t duty)
+//{
+//  uint8_t pwm_resolution = 8;
+//  switch (ch)
+//  {
+//    case 1:
+//      ledcSetup(ch, freq, pwm_resolution);
+//      ledcAttachPin(pinPWM1, ch);
+//      ledcWrite(pinPWM1, map(duty, 0, 100, 255, 0));
+//    break;
+//    case 2:
+//      ledcSetup(ch, freq, pwm_resolution);
+//      ledcAttachPin(pinPWM2, ch);
+//      ledcWrite(pinPWM2, map(duty, 0, 100, 255, 0));
+//    break;
+//  } 
+//}
 
 
 //##################    Function Error Code   ################## 
